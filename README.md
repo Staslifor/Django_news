@@ -1,1 +1,1 @@
-# Django_news
+# Django news website template 
