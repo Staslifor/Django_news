@@ -1,0 +1,33 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+</head>
+<body>
+    <aside>
+        <img class="image" src="{% static 'main/img/1.png' %}" alt="logo">
+        <span class="logo">KingNews</span>
+        <h3>Рубрики</h3>
+        <ul>
+            <a href="{% url 'home' %}"><i class="fas fa-home"></i><li>Главная</li></a>
+            <a href="{% url 'news_home' %}"><i class="far fa-newspaper"></i><li>Нововсти</li></a>
+            <a href="{% url 'people' %}"><i class="fas fa-comments-dollar"></i><li>Политика</li></a>
+            <a href="{% url 'money' %}"><i class="fas fa-search-dollar"></i><li>Экономика</li></a>
+            <a href="{% url 'about' %}"><i class="fas fa-address-card"></i><li>Про нас</li></a>
+            <a href="{% url 'create' %}"><li><button class="btn btn-info"><i class="fas fa-plus-circle"></i>Добавить</li></a>
+        </ul>
+    </aside>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Form for create article{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>
+            Form for create an article
+        </h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.title }}<br>
+            {{ form.anons }}<br>
+            {{ form.full_text }}<br>
+            {{ form.date }}<br>
+
+<!--            <input type="text" placeholder="Article name" class="form-control"><br>-->
+<!--            <input type="text" placeholder="Anons of article" class="form-control"><br>-->
+<!--            <textarea class="form-control" placeholder="Text of article"></textarea><br>-->
+<!--            <input type="date" class="form-control"><br>-->
+<!--            <input type="time" class="form-control"><br>-->
+            <spa>{{ error }}</spa>
+            <button class="btn btn-success" type="submit">Add an article</button>
+        </form>
+    </div>
+{% endblock %}
